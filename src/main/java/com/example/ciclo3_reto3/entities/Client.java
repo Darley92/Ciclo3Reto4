@@ -18,11 +18,11 @@ public class Client implements Serializable {
     private String name;
     private Integer age;
 
-    @OneToMany
+    @OneToMany (cascade = {CascadeType.REMOVE},mappedBy="client")
     @JsonIgnoreProperties("client")
     private List<Message> messages;
 
-    @OneToMany
+    @OneToMany (cascade = {CascadeType.REMOVE},mappedBy="client")
     @JsonIgnoreProperties("client")
     private List<Reservation> reservations;
 
